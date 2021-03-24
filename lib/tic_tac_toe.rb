@@ -22,7 +22,7 @@ def input_to_index(input)
 end
 
 def move(board, index, marker = "X")
-  board[index.to_i-1] = marker
+  board[index] = marker
 end
 
 def position_taken?(board, index)
