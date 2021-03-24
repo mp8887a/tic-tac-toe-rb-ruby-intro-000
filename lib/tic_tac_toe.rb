@@ -61,7 +61,7 @@ def turn(board)
 else
   turn(board)
   end
-  
+
 def won?(board)
   WIN_COMBINATIONS.each do |win_combination|
     win_index_1 = win_combination[0]
