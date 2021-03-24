@@ -2,9 +2,18 @@
   "RSpec": {
     "coverage": {
       "/home/abstract-inheritance-0181/tic-tac-toe-rb-ruby-intro-000/lib/tic_tac_toe.rb": [
-
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1616606980
+    "timestamp": 1616607014
   }
 }
