@@ -115,7 +115,7 @@ def won?(board)
     end
     if won?(board)
       puts "Congratulations #{{winner(board)}}!"
-    else 
+    else
       puts "Cat's Game!"
     end
   end
