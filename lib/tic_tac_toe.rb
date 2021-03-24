@@ -107,7 +107,7 @@ def won?(board)
       return board[win_combination.first]
     end
   end
-  
+
   def play(board)
     until over?(board)
       current_player(board)
