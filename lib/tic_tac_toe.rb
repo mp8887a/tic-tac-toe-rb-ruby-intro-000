@@ -52,8 +52,6 @@ def current_player(board)
   turn_count(board).even? ? "X" : "O"
 end
 
-
-
 def turn(board)
   puts "Please enter 1-9:"
   user_input = gets.strip
