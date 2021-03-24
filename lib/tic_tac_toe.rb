@@ -52,12 +52,67 @@ def current_player(board)
   turn_count(board).even? ? "X" : "O"
 end
 
+
+
 def turn(board)
   puts "Please enter 1-9:"
   user_input = gets.strip
-  index = input_to_index(user_input)
+
   if valid_move?(board, index)
     move(board, index, marker = "X")
 else
   turn(board)
+  end
+  def won?(board)
+    WIN_COMBINATIONS.each do |win_combination|
+      win_index_1 = win_combination[0]
+      win_index_2 = win_combination[1]
+      win_index_3 = win_combination[2]
+
+      position_1 = board[win_index_1]
+      position_2 = board[win_index_2]
+      position_3 = board[win_index_3]
+
+      if position_1 == "X" && position_2 == "X" && position_3 == "X"
+        return win_combination
+      elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
+        return win_combination
+      end
+    end
+    false
+  end
+
+  def full?(board)
+    board.all? {|i| i == "X" || i == "O"}
+  end
+
+  def draw?(board)
+    if !won?(board) && full?(board)
+      return true
+    elsif !won?(board) && !full?(board)
+      return false
+    else won?(board)
+      return false
+    end
+  end
+
+  def over?(board)
+    if won?(board) || draw?(board) || full?(board)
+      return true
+    else
+      return false
+    end
+  end
+
+  def winner(board)
+    if win_combination = won?(board)
+      return board[win_combination.first]
+    end
+  end
+
+  def play(board)
+    until over?(board)
+      current_player(board)
+      turn(board)
+    end
   end
