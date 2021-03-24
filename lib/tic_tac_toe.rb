@@ -24,3 +24,16 @@ end
 def move(board, index, marker = "X")
   board[index] = marker
 end
+
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
+end
+
+def valid_move?(board, index)
+  real_position = index.to_i
+  if !position_taken?(board, index) && real_position.between?(0,8)
+    true
+  else
+    false
+  end
+end
